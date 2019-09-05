@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Grades";
+}
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Grades</h2>
+    <form action="" method="post">
+        Test 1:<input type="number" name="t1" id="t1" min="0" max="100" value="0" /><br />
+        Test 2:<input type="number" name="t2" id="t2" min="0" max="100" value="0" /><br />
+        Test 3:<input type="number" name="t3" id="t3" min="0" max="100" value="0" /><br />
+        <input type="submit" value="Submit" />
+    </form>
+    @if (ViewBag.T1 != null && ViewBag.T2 != null && ViewBag.T3 != null)
+    {
+        <h3><b>Grade Average:</b></h3>
+
+        <p>Average: @ViewBag.Average</p>
+        if (@ViewBag.Letter == 'A' || @ViewBag.Letter == 'B')
+        {
+            <p class="text-success">Grade: @ViewBag.Letter</p>
+        }
+        else if (@ViewBag.Letter == 'C')
+        {
+            <p class="text-warning">Grade: @ViewBag.Letter</p>
+        }
+        else
+        {
+            <p class="text-danger">Grade: @ViewBag.Letter</p>
+        }
+    }
+
+
+</body>
